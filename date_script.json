@@ -1,0 +1,29 @@
+{
+    "title": "Insert Date",
+    "rules": [
+        {
+            "description": "Insert date (format: YY.MM.DD Day)",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "d",
+                        "modifiers": {
+                            "mandatory": [
+                                "right_command",
+                                "right_control",
+                                "right_shift",
+                                "right_option"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "shell_command": "date '+%y.%m.%d %a' | pbcopy && osascript -e 'tell application \"System Events\" to keystroke \"v\" using command down'"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

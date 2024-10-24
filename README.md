@@ -13,3 +13,5 @@
 * Hyper + m = delete a char before cursor
 * Hyper + , = delete a char after cursor
 
+### For Date Input
+- Hyper + d = Current date in format format: YY.MM.DD Day
