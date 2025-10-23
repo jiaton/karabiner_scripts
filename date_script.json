@@ -19,7 +19,7 @@
                     },
                     "to": [
                         {
-                            "shell_command": "date '+%y.%m.%d %a' | pbcopy && osascript -e 'tell application \"System Events\" to keystroke \"v\" using command down'"
+                            "shell_command": "cal $(date '+%m %Y') | awk 'NR>2 {for(i=1;i<=NF;i++) print $i}' | while read day; do date -j -f '%Y-%m-%d' \"$(date '+%Y-%m')-$(printf '%02d' $day)\" '+%y.%m.%d %a' 2>/dev/null; done | pbcopy && osascript -e 'tell application \"System Events\" to keystroke \"v\" using command down'"
                         }
                     ]
                 }
